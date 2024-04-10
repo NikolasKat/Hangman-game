@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HangMan</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="css/style.min.css" />
+   </head>
+   <body>
+      <section class="main-section">
+         <div class="container">
+            <header class="header">
+               <h1 class="title">Hangman</h1>
+               <h4 class="title__subtitle">Find the hidden word</h4>
+            </header>
+            <div class="game-arena">
+               <div class="flex-block">
+                  <div class="gallows">
+                     <div id="first"></div>
+                     <div id="second"></div>
+                     <div id="third"></div>
+                     <div id="fourth"></div>
+                  </div>
+                  <h4 class="wrong-letters"></h4>
+               </div>
+               <div class="word-field">
+                  <!-- <span class="letter"></span> -->
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <script src="js/script.js"></script>
+   </body>
+</html>
