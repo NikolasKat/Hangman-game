@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
       newWordArr = word.split("");
    let counter = 0;
 
+   // function word field for random word
    function createWordField(data) {
       for (let i = 0; i < data.length; i++) {
          const span = document.createElement("span");
@@ -45,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
    createWordField(newWordArr);
 
+   // big function for showing letters and alerts
    function showLetter(arr, keyboardLetter) {
       arr.forEach((element, index) => {
          if (keyboardLetter == element) {
@@ -83,6 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
    }
 
+   // function for creating parts of body
    function createPartOfBody(c) {
       const div = document.createElement("div");
       if (c == 1) {
@@ -107,6 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
       gallowBlock.append(div);
    }
 
+   // function for adding wrong letters in wrong block
    function addLetterInWrongList(arr) {
       wrongLetters.textContent = `Wrong: ${arr}`;
    }
