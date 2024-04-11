@@ -14,6 +14,14 @@ window.addEventListener("DOMContentLoaded", () => {
       "abstract",
       "mathematics",
       "shop",
+      "mother",
+      "text",
+      "array",
+      "loop",
+      "elephant",
+      "chameleon",
+      "bed",
+      "camera",
    ];
 
    let word =
@@ -39,7 +47,35 @@ window.addEventListener("DOMContentLoaded", () => {
          if (keyboardLetter == element) {
             const span = document.getElementById(index);
             span.style.borderBottom = "#00ff7e";
+            span.id = `penis-${index}`;
             span.textContent = element;
+
+            const spanB = document.querySelectorAll("span");
+            const arrayForNoEmptySpans = [];
+            spanB.forEach((item) => {
+               if (
+                  item.id == "penis-0" ||
+                  item.id == "penis-1" ||
+                  item.id == "penis-2" ||
+                  item.id == "penis-3" ||
+                  item.id == "penis-4" ||
+                  item.id == "penis-5" ||
+                  item.id == "penis-6" ||
+                  item.id == "penis-7" ||
+                  item.id == "penis-8"
+               ) {
+                  arrayForNoEmptySpans.push(item);
+               }
+
+               if (arrayForNoEmptySpans.length == word.split("").length) {
+                  setTimeout(() => {
+                     alert("You Win!");
+                     window.location.reload();
+                  }, 1000);
+               } else {
+                  console.log("Err");
+               }
+            });
          }
       });
    }
@@ -85,7 +121,6 @@ window.addEventListener("DOMContentLoaded", () => {
          counter += 1;
          arrayOfLetters.push(e.key);
          addLetterInWrongList(arrayOfLetters);
-
          createPartOfBody(counter);
       }
    });
