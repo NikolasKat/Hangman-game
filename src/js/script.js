@@ -28,11 +28,14 @@ window.addEventListener("DOMContentLoaded", () => {
       arrayOfWords[
          Math.floor(Math.random() * arrayOfWords.length)
       ].toLowerCase();
-
    console.log(word);
 
+   const arrayOfLetters = [],
+      newWordArr = word.split("");
+   let counter = 0;
+
    function createWordField(data) {
-      for (let i = 0; i < data.split("").length; i++) {
+      for (let i = 0; i < data.length; i++) {
          const span = document.createElement("span");
          span.classList.add("letter");
          span.id = i;
@@ -40,34 +43,34 @@ window.addEventListener("DOMContentLoaded", () => {
       }
    }
 
-   createWordField(word);
+   createWordField(newWordArr);
 
    function showLetter(arr, keyboardLetter) {
       arr.forEach((element, index) => {
          if (keyboardLetter == element) {
             const span = document.getElementById(index);
             span.style.borderBottom = "#00ff7e";
-            span.id = `penis-${index}`;
+            span.id = `filled-${index}`;
             span.textContent = element;
 
             const spanB = document.querySelectorAll("span");
             const arrayForNoEmptySpans = [];
             spanB.forEach((item) => {
                if (
-                  item.id == "penis-0" ||
-                  item.id == "penis-1" ||
-                  item.id == "penis-2" ||
-                  item.id == "penis-3" ||
-                  item.id == "penis-4" ||
-                  item.id == "penis-5" ||
-                  item.id == "penis-6" ||
-                  item.id == "penis-7" ||
-                  item.id == "penis-8"
+                  item.id == "filled-0" ||
+                  item.id == "filled-1" ||
+                  item.id == "filled-2" ||
+                  item.id == "filled-3" ||
+                  item.id == "filled-4" ||
+                  item.id == "filled-5" ||
+                  item.id == "filled-6" ||
+                  item.id == "filled-7" ||
+                  item.id == "filled-8"
                ) {
                   arrayForNoEmptySpans.push(item);
                }
 
-               if (arrayForNoEmptySpans.length == word.split("").length) {
+               if (arrayForNoEmptySpans.length == newWordArr.length) {
                   setTimeout(() => {
                      alert("You Win!");
                      window.location.reload();
@@ -108,10 +111,7 @@ window.addEventListener("DOMContentLoaded", () => {
       wrongLetters.textContent = `Wrong: ${arr}`;
    }
 
-   const arrayOfLetters = [];
-   const newWordArr = word.split("");
-   let counter = 0;
-
+   // addEventListener for keyboard
    document.addEventListener("keydown", (e) => {
       const logicResult = newWordArr.some((item) => item == e.key);
       if (logicResult) {
